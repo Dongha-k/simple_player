@@ -1,0 +1,14 @@
+prefix=/usr/local/ffmpeg
+exec_prefix=${prefix}
+libdir=/usr/local/ffmpeg/lib
+includedir=/usr/local/ffmpeg/include
+
+Name: libavformat
+Description: FFmpeg container format library
+Version: 62.19.101
+Requires: 
+Requires.private: libavcodec >= 62.36.101, libswresample >= 6.4.100, libavutil >= 60.33.101
+Conflicts:
+Libs: -L${libdir}  -lavformat 
+Libs.private: -lm -lbz2 -L/Library/Frameworks/GStreamer.framework/Libraries/pkgconfig/../../lib -lz -framework CoreFoundation -framework Security
+Cflags: -I${includedir}
